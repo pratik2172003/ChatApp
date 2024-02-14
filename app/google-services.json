@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "944081521798",
+    "firebase_url": "https://day3-10000-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "day3-10000",
+    "storage_bucket": "day3-10000.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944081521798:android:8fd2ea269265949c185507",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5QZupGzj86_Tkz9q8N7cSsoJ5mwyz7Qg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944081521798:android:160925b451007def185507",
+        "android_client_info": {
+          "package_name": "com.example.firebase_"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5QZupGzj86_Tkz9q8N7cSsoJ5mwyz7Qg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
