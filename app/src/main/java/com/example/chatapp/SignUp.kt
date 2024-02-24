@@ -78,7 +78,7 @@ class SignUp : AppCompatActivity() {
 
         mDbRef =FirebaseDatabase.getInstance().getReference()
 
-        mDbRef.child("user").child(uid).setValue(User(name,email,uid)).addOnSuccessListener {
+        mDbRef.child("User").child(uid).setValue(User(name,email,uid)).addOnSuccessListener {
             print("Successfuly data store")
         }
 

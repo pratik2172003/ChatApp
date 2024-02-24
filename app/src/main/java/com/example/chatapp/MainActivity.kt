@@ -1,8 +1,10 @@
 package com.example.chatapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,33 +35,39 @@ class MainActivity : AppCompatActivity() {
 
 
         userList =ArrayList()
-        adapter= UserAdapter(this@MainActivity,userList)
+        adapter= UserAdapter(this,userList)
+
 
         userRecyclerView = findViewById(R.id.userRecyclerView)
 
         userRecyclerView.layoutManager = LinearLayoutManager(this)
-        userRecyclerView.adapter = this.adapter
+        userRecyclerView.adapter = adapter
 
 
-//        mDbRef.child("user").addValueEventListener(object : ValueEventListener{
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//
-//                userList.clear()
-//                for(postSnapshot in snapshot.children){
-//                    val currentUser= postSnapshot.getValue(User::class.java)
-//                    if(currentUser?.uid != mAuth.currentUser?.uid){
-//                        userList.add(currentUser!!)
-//                    }
-//
-//                }
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//
-//            }
-//        })
-//
-//
+        mDbRef.child("User").addValueEventListener(object : ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                userList.clear()
+                for(postSnapshot in snapshot.children){
+
+                    val currentUser= postSnapshot.getValue(User::class.java)
+                    if(currentUser?.uid != mAuth.currentUser?.uid) {
+                        userList.add(currentUser!!)
+                    }
+
+
+
+                }
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+
+            }
+        })
+
+
      }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
